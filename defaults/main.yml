@@ -1,0 +1,4 @@
+---
+grafana_version: latest
+grafana_port: 3000
+grafana_persistent_volume: /var/lib/grafana

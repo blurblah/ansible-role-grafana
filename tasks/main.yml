@@ -1,0 +1,14 @@
+---
+- import_tasks: check_system.yml
+
+- name: Run Grafana
+  docker_container:
+    name: grafana
+    image: 'grafana/grafana:{{ grafana_version }}'
+    ports:
+      - '{{ grafana_port }}:3000'
+    volumes:
+      - /var/lib/grafana:/var/lib/grafana
+    user: root
+    recreate: yes
+    restart_policy: unless-stopped
